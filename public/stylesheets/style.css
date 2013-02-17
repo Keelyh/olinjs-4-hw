@@ -1,0 +1,34 @@
+body {
+  padding: 50px;
+  background-color: #77a9df;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#compose_tweet{
+	display: inline-block;
+	background-color: #9e9e9e; 
+	border: 4px solid black;
+	border-radius: 10px;
+}
+
+#tweets{
+	vertical-align: top;
+	display: inline-block;
+	background-color: #9e9e9e; 
+	border: 4px solid black;
+	border-radius: 10px;
+}
+#heading{
+	text-align: center;
+	font-size: 30px;
+	border-bottom: 4px solid black;
+}
+
+.user{
+	font-size: 20px;
+}
+
+.text{
+	padding-left: 30px;
+	font-size: 14px;
+}

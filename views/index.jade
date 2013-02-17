@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  form(id= "compose_tweet")
+    | Compose a Tweet
+    br
+    input(type = "text", name = "message")
+    input(type = "Submit")
+  div(id = "tweets")
+    div(id = "heading")
+      | Look at all these Twits!
+    include _tweets
+
+  script
+    $('#compose_tweet').on('submit', function () {
+      $.post("/tweets", $('#compose_tweet').serialize());
+      console.log('this is just after the post');
+      $.get("/_tweets", function(data){
+        console.log(data);
+        console.log('Called in function in Jade');
+        $('#tweets').html(data);
+      })
+      return false;
+    })
