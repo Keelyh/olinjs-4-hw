@@ -1,1 +1,1 @@
-web: supervisor app
+web: node app
