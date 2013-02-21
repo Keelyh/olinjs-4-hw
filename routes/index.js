@@ -4,7 +4,7 @@
 var models = require('../models/models');
 
 exports.index = function(req, res){
-  var tweets = models.Tweet.find().populate('_user').exec(function(err, docs) {
+  var tweets = models.Tweet.find().sort('-_id').populate('_user').exec(function(err, docs) {
   	if (err) return console.log("cannot find tweets", err);
   	res.render('index', { title: 'Welcome to Crappy Twitter', tweets: docs});
   });  
@@ -12,7 +12,7 @@ exports.index = function(req, res){
 
 exports.partial = function(req, res){
   console.log("partial function");
-  var tweets = models.Tweet.find().populate('_user').exec(function(err, docs) {
+  var tweets = models.Tweet.find().sort('-_id').populate('_user').exec(function(err, docs) {
   	if (err) return console.log("cannot find tweets", err);
     console.log("inside partial");
   	res.render('_tweets', { title: '', tweets: docs});
